@@ -1,0 +1,64 @@
+body{
+    background-color:#689068;
+    color:#fff;
+}
+
+.home h1{
+border-bottom:3px solid #fff;
+padding-bottom:4px;
+}
+
+.home .menuCube{
+    border:3px solid #fff;
+    height:64px;
+    border-radius:5px;
+    
+}
+
+.trainer 
+
+.form-signin{
+    background:lightgrey; 
+    padding:20px 30px 30px 30px; 
+    border-radius:10px;
+    }
+    
+    
+.form-signin select{
+    width:100%;
+}
+
+.appTitle{
+color:#fff;
+padding:20px;
+border:5px solid #fff;
+border-radius:10px;
+text-align:center;
+margin-top:20px;
+}
+
+.nav-stacked{
+border:1px solid #fff;
+} 
+
+.sumSection{
+color:#fff;
+font-size:8em;
+text-align:center;
+margin-top:1em;
+padding-bottom:0.5em;
+border-bottom:5px solid #fff;
+} 
+
+.sumSection input{
+    height:1em;
+    font-size:1em;
+    width:320px;
+    
+}
+
+.btn-large{
+font-size:24px;
+padding:18px 22px;
+width:60px;
+}
