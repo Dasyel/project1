@@ -33,12 +33,21 @@ class Trainer extends CI_Controller {
 	{
 	    $answerToBeChecked = $this->input->post('answer');
         
-        if (is_numeric($answerToBeChecked)) {
-            $numberOne = $this->generateNumber();
-            $numberTwo = $this->generateNumber();
-            print $answerToBeChecked;
-            print $numberOne;
-            print $numberTwo;
+        if (is_numeric($answerToBeChecked)) 
+        {
+            $numbers = $this->input->post('numbers');
+            $operators = $this->input->post('operators');
+            $result = answer_check($numbers, $operators, $answerToBeChecked);
+            
+            if($result == 'TRUE')
+            {
+                print "GOED ZO!";
+                //$this->index();
+            }
+            else
+            {
+                echo $result;
+            }
         }
         elseif($answerToBeChecked == "")
         {
@@ -46,7 +55,7 @@ class Trainer extends CI_Controller {
         }
         else
         {
-            print "Voer een nummber in en niets anders!";
+            print "Voer een nummer in en niets anders!";
         }
 	}
 	

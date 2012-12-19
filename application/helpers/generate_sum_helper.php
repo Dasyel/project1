@@ -69,3 +69,8 @@ function generate_operators($operatorLevel, $operatorAmount)
     array_push($operatorArray, '=');
     return $operatorArray;
 }
+
+function answer_check($numbers, $operators, $answer)
+{
+    return 'TRUE';
+}
