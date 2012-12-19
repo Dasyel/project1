@@ -10,11 +10,9 @@ class Trainer extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
-	public function generateNumbers(){
-	    $numberOne = rand(0,10);
-	    $numberTwo = rand(0,10);
-	    
-	   
+	public function generateNumber()
+	{
+	    return rand(0,10);
 	}
 	
 	public function checkAnswer()
@@ -22,8 +20,10 @@ class Trainer extends CI_Controller {
 	    $answerToBeChecked = $this->input->post('answer');
         
         if (is_numeric($answerToBeChecked)) {
+            $numberOne = $this->generateNumber();
+            $numberTwo = $this->generateNumber();
             print $answerToBeChecked;
-            print $this->generateNumbers($numberOne);
+            print $numberOne;
             print $numberTwo;
         }
         elseif($answerToBeChecked == "")
