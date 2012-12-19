@@ -1,0 +1,32 @@
+Wizzkidz
+
+
+
+Twee rollen:
+- Leerling  --> front end
+- Meester/Juf --> back end
+
+
+Wat kan de leerling:
+- Inloggen/Uitloggen
+- wachtwoord instellen --> bij eerste keer inloggen
+- Trainer starten --> oneindig lang sommetjes oefenen
+- Toets beginnen --> 
+- Voortgang/historie bekijken --> hoe goed doe ik het?
+
+
+
+Wat kan de leraar:
+- Inloggen/Uitloggen
+- Een klas aanmaken --> zoals 4a 6b 7a
+- leetlingen toevoegen aan de klas --> zodat de kinderen hun naam kunnen aanklikken tijdens inloggen
+- Statistieken bekijken per leerling/klas/landelijk gemiddelde
+- toets maken/geautomatiseerd laten maken
+- toets vrijgeven/sluiten --> wat mogen de leerlingen op dit moment doen?
+- trainer opties vrijgeven/verbergen
+- account beheren van leerlingen
+- rapport naar ouders nieuw 
+
+
+
+

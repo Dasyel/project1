@@ -1,19 +1,20 @@
-<div class="container">
+<div class="container loginStudent">
     <div class="row">
         <div class="span4 offset4">
             <h1 class="appTitle">WizzKidz</h1>
             <form class="form-signin">
-                <h2 class="form-signin-heading">Log eerst in voor je kan rekenen</h2>
-                <p>Kies je naam</p>
+                <h2 class="form-signin-heading">Log eerst in</h2>
+                <h4>Kies je naam:</h4>
                 <select class="class="input-block-level placeholder="Password">
                   <option value="volvo">Anne</option>
                   <option value="saab">Jeroen</option>
                   <option value="mercedes">Marije</option>
                   <option value="audi">Zack</option>
                 </select>
-                <p>Geef je wachtwoord</p>
+                <h4>Voer nu je wachtwoord in:</h4>
                 <input type="password" class="input-block-level" >
-                <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+                
+                <button class="btn btn-large btn-warning" type="submit">Log in</button>
             </form>
         </div>
     </div>

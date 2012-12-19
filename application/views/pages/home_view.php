@@ -7,49 +7,61 @@
     <!--trainer row -->
     <div class="row">
         <div class="span4 offset4">
-            <h1>Trainen</h1>
+            <h1 class="sectionTitle">Trainen</h1>
         </div>
     </div>
     <div class="row">
         <div class="span1 offset4">
-            <div class="menuCube">
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            <span>optellen</span>
+            </a>
         </div>
         <div class="span1">
-            <div class="menuCube">
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            <span>aftrekken</span>
+            </a>
         </div>
         <div class="span1">
-            <div class="menuCube">
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            <span>keer</span>
+            </a>
         </div>
         <div class="span1">
-            <div class="menuCube">
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            <span>delen</span>
+            </a>
         </div>
     </div>
     <!-- end of trainer row -->
     <!-- tests row -->
     <div class="row">
         <div class="span4 offset4">
-            <h1>Toetsen</h1>
+            <h1 class="sectionTitle">Toetsen</h1>
         </div>
     </div>
     <div class="row">
         <div class="span1 offset4">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
         <div class="span1">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
         <div class="span1">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
         <div class="span1">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
     </div>
@@ -57,24 +69,28 @@
     <!-- begin of progress row -->
     <div class="row">
         <div class="span4 offset4">
-            <h1>Voortgang</h1>
+            <h1 class="sectionTitle">Voortgang</h1>
         </div>
     </div>
     <div class="row">
         <div class="span1 offset4">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                <i class="icon-search icon-white"></i>
             </div>
         </div>
         <div class="span1">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
         <div class="span1">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
         <div class="span1">
-            <div class="menuCube">
+            <div class="btn btn-large btn-warning">
+                +
             </div>
         </div>
     </div>
