@@ -1,18 +1,32 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Trainer extends CI_Controller {
-	public function index()
+    
+    public function __construct()
 	{
-	    $data['numberOne'] = 10;
-	    $data['numberTwo'] = 20;
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->helper('generate_sum');
+	}
+	
+	public function index($operatorLevel = 3, $numberAmount = 2)
+	{
+	    $operatorAmount = $numberAmount - 1;
+	    $data['numberAmount'] = $numberAmount;
+	    $data['numbers'] = generate_numbers($numberAmount);
+	    $data['operators'] = generate_operators($operatorLevel, $operatorAmount);
 	    $this->load->view('templates/header');
 		$this->load->view('pages/trainer_view',$data);
 		$this->load->view('templates/footer');
 	}
 	
-	public function generateNumber()
+	public function generate_sum($operatorLevel = 3, $numberAmount = 2)
 	{
-	    return rand(0,10);
+	    $operatorAmount = $numberAmount - 1;
+	    $data['numberAmount'] = $numberAmount;
+	    $data['numbers'] = generate_numbers($numberAmount);
+	    $data['operators'] = generate_operators($operatorLevel, $operatorAmount);
+		$this->load->view('pages/trainer_view',$data);
 	}
 	
 	public function checkAnswer()

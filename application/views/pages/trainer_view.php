@@ -11,7 +11,14 @@
             <div class="row">
                 <div class="span12 ">
                     <h1 class="sumSection">
-                    3854 + 3834 = <span><input type="tel" id="answer"></span></h1>
+                    <?php 
+                    for ($i=0; $i<$numberAmount; $i++)
+                    {
+                        echo $numbers[$i] .' ';
+                        echo $operators[$i] .' ';
+                    }
+                    ?>
+                    <span><input type="tel" id="answer"></span></h1>
                 </div>
             </div>
             <div class="row">
