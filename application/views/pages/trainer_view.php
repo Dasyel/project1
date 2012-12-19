@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="span12 ">
                     <h1 class="sumSection">
-                    3854 + 3834 = <span><input type="tel" id="answer"></span></h1>
+                    <?php echo rand(0,100).'+'.rand(0,100) ?>= <span><input type="tel" id="answer"></span></h1>
                 </div>
             </div>
             <div class="row">

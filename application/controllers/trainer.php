@@ -23,8 +23,7 @@ class Trainer extends CI_Controller {
         
         if (is_numeric($answerToBeChecked)) {
             print $answerToBeChecked;
-            print $this->generateNumbers($numberOne);
-            print $numberTwo;
+           
         }
         elseif($answerToBeChecked == "")
         {
