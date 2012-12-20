@@ -48,27 +48,7 @@ A bulleted list of any frameworks, languages, libraries, or other technologies w
 Low fidelity mockups of the screens a user might encounter, and the way these are linked together.
 --------------------------------------------------------------------------------------------------
 
-----------------------------------------------
-|                  Trainer              
-|
-|           3 + 3 = [ input field  ]
-|
-|           --------------------------
-|           Your answer was right =)
-|
-|
------------------------------------------------
-
-----------------------------------------------
-|                  Wizzkidzz              
-|
-|           [ choose you name ]
-|
-|           [ provide your password ]
-|          
-|
-|
------------------------------------------------
+git clone for login home and trainer examples
 
 
 
