@@ -13,8 +13,7 @@ class Trainer extends CI_Controller {
 	{
 	    $operatorAmount = $numberAmount - 1;
 	    $data['numberAmount'] = $numberAmount;
-	    $data['numbers'] = generate_numbers($numberAmount);
-	    $data['operators'] = generate_operators($operatorLevel, $operatorAmount);
+	    $data['numbers'] = generate_equation($numberAmount,$operatorLevel);
 	    $this->load->view('templates/header');
 		$this->load->view('pages/trainer_view',$data);
 		$this->load->view('templates/footer');
@@ -24,8 +23,7 @@ class Trainer extends CI_Controller {
 	{
 	    $operatorAmount = $numberAmount - 1;
 	    $data['numberAmount'] = $numberAmount;
-	    $data['numbers'] = generate_numbers($numberAmount);
-	    $data['operators'] = generate_operators($operatorLevel, $operatorAmount);
+	    $data['numbers'] = generate_equation($numberAmount,$operatorLevel);
 		$this->load->view('pages/trainer_view',$data);
 	}
 	
@@ -37,7 +35,7 @@ class Trainer extends CI_Controller {
         {
             $numbers = $this->input->post('numbers');
             $operators = $this->input->post('operators');
-            $result = answer_check($numbers, $operators, $answerToBeChecked);
+            $result = answer_check($numbers, $answerToBeChecked);
             
             if($result == 'TRUE')
             {

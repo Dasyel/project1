@@ -12,10 +12,10 @@
                 <div class="span12 ">
                     <h1 class="sumSection">
                     <?php 
-                    for ($i=0; $i<$numberAmount; $i++)
+                    foreach ($numbers as $number)
                     {
-                        echo $numbers[$i] .' ';
-                        echo $operators[$i] .' ';
+                        echo $number .' ';
+                        //echo $operators[$i] .' ';
                     }
                     ?>
                     <span><input type="tel" id="answer"></span></h1>

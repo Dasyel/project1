@@ -1,21 +1,22 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-function generate_numbers($numberAmount)
+function generate_equation($numberAmount, $operatorLevel)
 {
-    $numberArray = array();
+    $equationArray = array();
     
-    for ($i=1; $i<=$numberAmount; $i++)
+    for ($i=1; $i<$numberAmount; $i++)
     {
-        array_push($numberArray,rand(0,10));
+        array_push($equationArray,rand(0,10));
+        array_push($equationArray,generate_operator($operatorLevel));
     }
-    return $numberArray;
-    }
+    
+    array_push($equationArray,rand(0,10));
+    array_push($equationArray,'=');
+    return $equationArray;
+}
 
-function generate_operators($operatorLevel, $operatorAmount)
-{
-    $operatorArray = array();
-    for ($i=1; $i<=$operatorAmount; $i++)
-    { 
+function generate_operator($operatorLevel)
+{ 
         switch ($operatorLevel)
         {
         case 1:
@@ -63,14 +64,24 @@ function generate_operators($operatorLevel, $operatorAmount)
         default:
             return FALSE;
         }
-    
-        array_push($operatorArray,$operator);
-    }
-    array_push($operatorArray, '=');
-    return $operatorArray;
+        
+    return $operator;
 }
 
-function answer_check($numbers, $operators, $answer)
+function answer_check($equationArray, $answer)
 {
-    return 'TRUE';
+    $equation = '';
+    foreach($equationArray as $equationPart)
+    {
+        $equation = $equation . $equationPart;
+    }
+    $rightAnswer = $equation;
+    if($rightAnswer == $answer)
+    {
+        return 'TRUE';
+    }
+    else
+    {
+        return $equation;
+    }
 }
