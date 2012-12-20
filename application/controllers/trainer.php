@@ -31,6 +31,7 @@ class Trainer extends CI_Controller {
 	{
 	    $answerToBeChecked = $this->input->post('answer');
         
+
         if (is_numeric($answerToBeChecked)) 
         {
             $equation = $this->input->post('equation');
@@ -46,6 +47,7 @@ class Trainer extends CI_Controller {
             {
                 echo $result;
             }
+
         }
         elseif($answerToBeChecked == "")
         {

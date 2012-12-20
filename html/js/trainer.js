@@ -5,7 +5,8 @@ $("#submitAnswer").click(
        
         /*the data we are going to send*/
         var postData = {
-        'answer':$('#answer').val()
+        'answer':$('#answer').val(),
+        'equation':$('#equation').val(),
         };
               
         $.ajax({
@@ -14,8 +15,10 @@ $("#submitAnswer").click(
             data: postData,
             success: 
             
-            function(checkAnswerResult){
-                $('#answerComment').html(checkAnswerResult)
+            
+            
+            function(checkAnswerReturn){
+                $('#answerComment').html(checkAnswerReturn)
             }
                     
         });
