@@ -8,6 +8,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes" /> 
+    <meta charset='utf-8'> 
     
     <title>WizzKidz</title>
     <!--css files-->
