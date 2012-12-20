@@ -20,6 +20,7 @@
                     }
                     ?>
                     <span><input type="tel" id="answer"></span></h1>
+                    <input type="hidden" id="equation" value="<?php echo $equation ?>">
 
                 </div>
             </div>
