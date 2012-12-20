@@ -7,24 +7,32 @@ class Trainer extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->helper('generate_sum');
+		$this->load->library('RPNstack');
 	}
 	
 	public function index($operatorLevel = 3, $numberAmount = 2)
 	{
-	    $operatorAmount = $numberAmount - 1;
-	    $data['numberAmount'] = $numberAmount;
-	    $data['equation'] = generate_equation($numberAmount,$operatorLevel);
+	    $data = $this->generate_equation($operatorLevel = 3, $numberAmount = 2);
+	    
 	    $this->load->view('templates/header');
 		$this->load->view('pages/trainer_view',$data);
 		$this->load->view('templates/footer');
 	}
 	
-	public function generate_sum($operatorLevel = 3, $numberAmount = 2)
+	public function generate_equation($operatorLevel = 3, $numberAmount = 2)
 	{
-	    $operatorAmount = $numberAmount - 1;
 	    $data['numberAmount'] = $numberAmount;
-	    $data['numbers'] = generate_equation($numberAmount,$operatorLevel);
-		$this->load->view('pages/trainer_view',$data);
+	    $equationArray = generate_equation($numberAmount,$operatorLevel);
+	    $equation = equationArray_to_string($equationArray);
+	    $this->session->set_userdata('equation', $equationArray);
+	    return $data;
+	}
+	
+	public function ajax_equation()
+	{
+	    
+	    $data = $this->generate_equation($operatorLevel = 3, $numberAmount = 2);
+	    print $data['equation'];
 	}
 	
 	public function checkAnswer()
@@ -34,29 +42,31 @@ class Trainer extends CI_Controller {
 
         if (is_numeric($answerToBeChecked)) 
         {
-            $equation = $this->input->post('equation');
-            //$operators = $this->input->post('operators');
+            $ajaxArray = array();
+            $equation = $this->session->userdata('equation');
             $result = answer_check($equation, $answerToBeChecked);
-            $result = TRUE;
+
             if($result == 'TRUE')
             {
-                print "GOED ZO!";
+                $message = "GOED ZO!";
                 //$this->index();
             }
             else
             {
-                echo $result;
+                $message = "DIT IS FOUT! Ik ben niet boos, ik ben gewoon teleurgesteld.";
             }
 
         }
         elseif($answerToBeChecked == "")
         {
-            print "Laat je antwoord niet leeg :P";
+            $message = "Laat je antwoord niet leeg :P";
         }
         else
         {
-            print "Voer een nummer in en niets anders!";
+            $message = "Voer een nummer in en niets anders!";
         }
+        
+        return $message;
 	}
 	
 	
