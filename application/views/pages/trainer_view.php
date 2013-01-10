@@ -1,4 +1,4 @@
-
+nu
 
 <div class="container">
     <div class="row">
@@ -13,9 +13,9 @@
                     <h1 class="sumSection">
 
                     <?php 
-                    foreach ($numbers as $number)
+                    foreach ($equation as $equationElement)
                     {
-                        echo $number .' ';
+                        echo $equationElement .' ';
                         //echo $operators[$i] .' ';
                     }
                     ?>
