@@ -7,12 +7,11 @@ class Trainer extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->helper('generate_sum');
-		$this->load->library('RPNstack');
 	}
 	
 	public function index($operatorLevel = 3, $numberAmount = 2)
 	{
-	    $data = $this->generate_equation($operatorLevel = 3, $numberAmount = 2);
+	    $data['equation'] = $this->generate_equation($operatorLevel = 3, $numberAmount = 2);
 	    
 	    $this->load->view('templates/header');
 		$this->load->view('pages/trainer_view',$data);
