@@ -11,7 +11,6 @@ function generate_equation($numberAmount, $operatorLevel)
     }
     
     array_push($equationArray,rand(0,10));
-    array_push($equationArray,'=');
     return $equationArray;
 }
 
@@ -67,15 +66,21 @@ function generate_operator($operatorLevel)
         
     return $operator;
 }
-
-function answer_check($equationArray, $answer)
+function equationArray_to_string($equationArray, $translate = FALSE)
 {
     $equation = '';
     foreach($equationArray as $equationPart)
     {
-        $equation = $equation . $equationPart;
+        $equation = $equation . $equationPart . ' ';
     }
-    $rightAnswer = $equation;
+    
+    return $equation;
+}
+
+function answer_check($equationArray, $answer)
+{
+    $equation = equationArray_to_string($equationArray);
+    $rightAnswer = calc_string($equation);
     if($rightAnswer == $answer)
     {
         return 'TRUE';
@@ -85,3 +90,11 @@ function answer_check($equationArray, $answer)
         return $equation;
     }
 }
+
+//http://www.gamedev.net/topic/436613-php-interpret-math-string-and-return-value/
+function calc_string( $mathString )
+{
+	$cf_DoCalc = create_function("", "return (" . $mathString . ");" );
+	
+	return $cf_DoCalc();
+};

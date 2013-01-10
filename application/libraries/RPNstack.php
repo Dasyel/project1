@@ -1,5 +1,7 @@
 <?php
-	/* This Class can be useful for writting RPN macros or FORTH like parsers 
+	/* http://stackoverflow.com/questions/1015242/how-to-evaluate-formula-passed-as-string-in-php
+	
+	This Class can be useful for writting RPN macros or FORTH like parsers 
 		   @Author: Arturo Gonzalez-Mata Santana (Spain)
 				 arturogmata@gmail.com
 		@copyright 2007: www.phpsqlasp.com
@@ -113,7 +115,7 @@
 		} // parse
 
 
-		function parse_line($cadena)
+		public function parse_line($cadena)
 		{
 			$tok = strtok ($cadena," ");
 			while ($tok!= '') {

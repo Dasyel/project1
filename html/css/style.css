@@ -101,6 +101,7 @@ border-bottom:5px solid #fff;
     height:1em;
     font-size:1em;
     width:320px;
+    margin-left:20px;
     
 }
 
@@ -116,4 +117,9 @@ padding:0;
 .loginStudent .form-signin-heading{
 border-bottom: 3px solid #fff;
 padding-bottom:4px;
+}
+
+#answerComment{
+    text-align:center;
+    min-height:60px;
 }
