@@ -1,7 +1,7 @@
 <div class="container home">
     <div class="row">
         <div class="span4 offset4">
-            <h1 class="appTitle">Hoofdmenu</h1>
+            <h1 class="mainTitle">Hoofdmenu</h1>
         </div>
     </div>
     <!--trainer row -->
@@ -14,25 +14,22 @@
         <div class="span1 offset4">
             <a href="#" class="btn btn-warning btn-large">
             <div class="icon"><i class="icon-white icon-heart"></i></div>
-            <span>optellen</span>
             </a>
         </div>
         <div class="span1">
             <a href="#" class="btn btn-warning btn-large">
             <div class="icon"><i class="icon-white icon-heart"></i></div>
-            <span>aftrekken</span>
+           
             </a>
         </div>
         <div class="span1">
             <a href="#" class="btn btn-warning btn-large">
             <div class="icon"><i class="icon-white icon-heart"></i></div>
-            <span>keer</span>
             </a>
         </div>
         <div class="span1">
             <a href="#" class="btn btn-warning btn-large">
-            <div class="icon"><i class="icon-white icon-heart"></i></div>
-            <span>delen</span>
+            <span> <div class="icon"><i class="icon-white icon-heart"></i></div></span>
             </a>
         </div>
     </div>
@@ -44,25 +41,26 @@
         </div>
     </div>
     <div class="row">
-        <div class="span1 offset4">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+         <div class="span1 offset4">
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            </a>
         </div>
         <div class="span1">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+           
+            </a>
         </div>
         <div class="span1">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            </a>
         </div>
         <div class="span1">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <span> <div class="icon"><i class="icon-white icon-heart"></i></div></span>
+            </a>
         </div>
     </div>
     <!-- end of tests row -->
@@ -73,25 +71,26 @@
         </div>
     </div>
     <div class="row">
-        <div class="span1 offset4">
-            <div class="btn btn-large btn-warning">
-                <i class="icon-search icon-white"></i>
-            </div>
+         <div class="span1 offset4">
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            </a>
         </div>
         <div class="span1">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+           
+            </a>
         </div>
         <div class="span1">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <div class="icon"><i class="icon-white icon-heart"></i></div>
+            </a>
         </div>
         <div class="span1">
-            <div class="btn btn-large btn-warning">
-                +
-            </div>
+            <a href="#" class="btn btn-warning btn-large">
+            <span> <div class="icon"><i class="icon-white icon-heart"></i></div></span>
+            </a>
         </div>
     </div>
     <!-- end of progress row-->

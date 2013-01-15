@@ -51,8 +51,6 @@ Low fidelity mockups of the screens a user might encounter, and the way these ar
 git clone for login home and trainer examples
 
 
-
-
 A few sentences of who will do what.
 -------------------------------------
 See github for progress due to vacation time 
