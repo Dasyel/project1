@@ -49,6 +49,12 @@ class Teacher_model extends CI_Model
 	    $this->db->delete('Teachers');
 	}
 	
+	public function remove_teachers_by_school($schoolId)
+	{
+	    $this->db->where('school_id', $schoolId);
+	    $this->db->delete('Teachers');
+	}
+	
 	public function set_teacher_class($teacherId, $classId, $accessLevel = 2)
 	{
 	    $data = array(
@@ -62,6 +68,11 @@ class Teacher_model extends CI_Model
 	
 	public function update_teacher($teacherId, $column, $data)
 	{
-	
+	    $updateData = array(
+               $column => $data
+            );
+
+        $this->db->where('teacher_id', $teacherId);
+        $this->db->update('Teachers', $updateData);
 	}
 }
