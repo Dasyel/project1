@@ -46,6 +46,10 @@ class Database_creation_model extends CI_Model
 												 'type' => 'VARCHAR',
 												 'constraint' => '32',
 										  ),
+                        'school_id' => array(
+												 'type' => 'INT',
+												 'constraint' => '9',
+										  ),
 				);
 
 		$this->dbforge->add_field($fields);
@@ -125,20 +129,12 @@ class Database_creation_model extends CI_Model
 												 'type' => 'VARCHAR',
 												 'constraint' => '255',
 										  ),
-						'student_school_id' => array(
-												 'type' => 'INT',
-												 'constraint' => '9',
-												 'unsigned' => TRUE
-										  ),
-						'student_class_id' => array(
+						'class_id' => array(
 												 'type' => 'INT',
 												 'constraint' => '9',
 												 'unsigned' => TRUE
 										  ),
 						'student_join_date' => array(
-												 'type' => 'TIMESTAMP',
-										  ),
-						'student_last_login' => array(
 												 'type' => 'TIMESTAMP',
 										  ),
 				);
