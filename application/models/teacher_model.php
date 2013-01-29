@@ -8,15 +8,39 @@ class Teacher_model extends CI_Model
 		$this->load->database();
 	}
 
-	public function get_login_credentials($teacherId)
+	public function get_login_credentials($email)
 	{
 	    $this->db->select('teacher_password');
         $this->db->from('Teachers');
-        $this->db->where('teacher_id',$teacherId);
+        $this->db->where('teacher_email',$email);
         $query = $this->db->get();
         $passObject = $query->row();
-        return $passObject->teacher_password;
+        if($passObject != NULL)
+        {
+            return $passObject->teacher_password;
+        }
+        else
+        {
+            return FALSE;
+        }
 	}
+
+    public function get_teacher_id($email)
+    {
+        $this->db->select('teacher_id');
+        $this->db->from('Teachers');
+        $this->db->where('teacher_email',$email);
+        $query = $this->db->get();
+        $idObject = $query->row();
+        if($idObject != NULL)
+        {
+            return $idObject->teacher_id;
+        }
+        else
+        {
+            return FALSE;
+        }
+    }
 
 	public function get_teacher($teacherId)
 	{
@@ -38,6 +62,16 @@ class Teacher_model extends CI_Model
         $query = $this->db->get();
         return $query->result_array();
 	}
+
+    public function get_teachers_by_class($classId)
+    {
+        $this->db->select('*');
+        $this->db->from('Teachers');
+        $this->db->Join('Classes_Teachers', 'Teachers.teacher_id = Classes_Teachers.teacher_id');
+        $this->db->where('Classes_Teachers.class_id',$classId);
+        $query = $this->db->get();
+        return $query->result_array();
+    }
 
 	public function create_teacher($data)
 	{

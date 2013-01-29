@@ -1,10 +1,10 @@
 <h1>My Classes</h1>
-<h2><a href="<?php echo site_url('class/add') ?>" >  <?php echo 'Add Class' ?></a></h2>
+<h2><a href="<?php echo site_url('group/add') ?>" >  <?php echo 'Add Class' ?></a></h2>
 <?php foreach($classes as $class): ?>
     <?php
-        $viewSegments = array('class','view',$class['class_id']);
-        $editSegments = array('class','edit',$class['class_id']);
-        $removeSegments = array('class','remove',$class['class_id']);
+        $viewSegments = array('group','view',$class['class_id']);
+        $editSegments = array('group','edit',$class['class_id']);
+        $removeSegments = array('group','remove',$class['class_id']);
     ?>
     <li>
         <a href="<?php echo site_url($viewSegments) ?>" >  <?php echo $class['class_name'] ?></a>

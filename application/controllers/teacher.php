@@ -33,7 +33,7 @@ class Teacher extends CI_Controller
 	    {
 	        $this->load->helper('form');
 	        $this->load->library('form_validation');
-	        $this->form_validation->set_rules('tid', 'Teacher Id', 'required');
+	        $this->form_validation->set_rules('email', 'Email Adress', 'required');
 	        $this->form_validation->set_rules('password', 'Password', 'required');
 
 	        if ($this->form_validation->run() === FALSE)
@@ -42,9 +42,10 @@ class Teacher extends CI_Controller
 	        }
 	        else
 	        {
-	            $tid = $this->input->post('tid');
+	            $email = $this->input->post('email');
 	            $pass = $this->input->post('password');
-	            $dbPass = $this->teacher_model->get_login_credentials($tid);
+	            $dbPass = $this->teacher_model->get_login_credentials($email);
+                $tid = $this->teacher_model->get_teacher_id($email);
 
 	            if($dbPass == sha1($pass))
 	            {
@@ -139,5 +140,54 @@ class Teacher extends CI_Controller
 
             redirect('teacher/edit');
         }
+    }
+
+    public function create()
+    {
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('firstName', 'First Name', 'required');
+        $this->form_validation->set_rules('lastName', 'Last Name', 'required');
+        $this->form_validation->set_rules('email', 'Email Adress', 'required');
+        $this->form_validation->set_rules('school', 'School', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        if ($this->form_validation->run() === FALSE)
+        {
+            $data['schools'] = $this->school_model->get_schools();
+            $this->load->view('teacher/create', $data);
+        }
+        else
+        {
+            $firstName = $this->input->post('firstName');
+            $middleName = $this->input->post('middleName');
+            $lastName = $this->input->post('lastName');
+            $email = $this->input->post('email');
+            $school = $this->input->post('school');
+            $password = $this->input->post('password');
+            $pass = sha1($password);
+
+            $inputData = array(
+               'teacher_first_name' => $firstName ,
+               'teacher_middle_name' => $middleName ,
+               'teacher_last_name' => $lastName,
+               'teacher_email' => $email,
+               'school_id' => $school,
+               'teacher_password' => $pass,
+            );
+
+            $this->teacher_model->create_teacher($inputData);
+            redirect('teacher/login');
+        }
+    }
+
+    public function remove($tid)
+    {
+        $tid = $this->session->userdata('tid');
+        if_not_logged_in_redirect($tid);
+
+        $this->teacher_model->remove_teacher($tid);
+        $this->session->unset_userdata('tid');
+        redirect('teacher/login');
     }
 }

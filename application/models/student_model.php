@@ -13,6 +13,7 @@ class Student_model extends CI_Model
 	    $this->db->select('student_id, student_first_name, student_middle_name, student_last_name');
         $this->db->from('Students');
         $this->db->where('class_id',$classId);
+        $this->db->order_by('student_last_name', 'asc');
         $query = $this->db->get();
         return $query->result_array();
 	}
