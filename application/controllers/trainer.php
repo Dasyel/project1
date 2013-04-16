@@ -11,7 +11,9 @@ class Trainer extends CI_Controller {
 	
 	public function index($operatorLevel = 3, $numberAmount = 2)
 	{
-	    $data['equation'] = $this->generate_equation($operatorLevel = 3, $numberAmount = 2);
+	    $equationArray = generate_equation($numberAmount,$operatorLevel);
+	    $data['equation'] = equationArray_to_string($equationArray);
+	    $this->session->set_userdata('equation', $equationArray);
 	    
 	    $this->load->view('templates/header');
 		$this->load->view('pages/trainer_view',$data);
@@ -20,11 +22,13 @@ class Trainer extends CI_Controller {
 	
 	public function generate_equation($operatorLevel = 3, $numberAmount = 2)
 	{
-	    $data['numberAmount'] = $numberAmount;
 	    $equationArray = generate_equation($numberAmount,$operatorLevel);
-	    $equation = equationArray_to_string($equationArray);
+	    $data['equation'] = equationArray_to_string($equationArray);
 	    $this->session->set_userdata('equation', $equationArray);
-	    return $data;
+	    
+	    $this->load->view('templates/header');
+		$this->load->view('pages/trainer_view',$data);
+		$this->load->view('templates/footer');
 	}
 	
 	public function ajax_equation()
