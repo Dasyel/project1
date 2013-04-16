@@ -87,7 +87,7 @@ function answer_check($equationArray, $answer)
     }
     else
     {
-        return $equation;
+        return 'FALSE';
     }
 }
 
