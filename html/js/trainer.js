@@ -51,14 +51,17 @@ $(document).ready(function() {
                         $('#sumText').html(evaluate.equation);
                         message = 'Goedzo je antwoord was helemaal in orde';
                         $('#answerComment').html(message);
-                        }
+                        $('#answer').val('');
+                    }
                     else if (evaluate.correctAnswer == 'FALSE') {
                         message = 'Dit is helaas niet het goede antwoord';
                         $('#answerComment').html(message);
-                        }
+                        $('#answer').val('');
+                    }
                     else{ 
-                        message = 'Oeps er ging iets fout, ga naar de meester of juf =)'
-                        $('#answerComment').html(message)
+                        message = 'Oeps er ging iets fout, ga naar de meester of juf =)';
+                        $('#answerComment').html(message);
+                        $('#answer').val('');
                     }
                 }
 
