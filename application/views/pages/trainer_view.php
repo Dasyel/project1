@@ -8,18 +8,34 @@
     </div>
     <div class="row">
         <div class="span12">
-            <div class="row">
-                <div class="span12 ">
-                    <h1 class="sumSection">
+            
+                
+                    <form  class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label" for="answer">
+                            <h1 class="sumSection">
+                                <span id ="sumText" >
+                                <?php echo $equation?>
+                                </span>
+                                <span>
+                                    =
+                                </span> 
+                            </h1>
+                        </label>
+                        <div class="controls">
+                            <input type="tel" id="answer" />
+                        </div>
+                    </div>
+                    </form>
                     
-                    <?php echo $equation .'='?>
-                    <span><input type="tel" id="answer"></span></h1>  
-                    <input type="hidden" id="equation" value="<?php echo $equation ?>">
 
-                </div>
-            </div>
+                
+           
                
         </div>
     </div>
     <div class="btn btn-large" id="submitAnswer">boe</div>
+    <div id ="answerComment">
+
+    </div>
 </div> <!-- /container -->
