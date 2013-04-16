@@ -1,7 +1,21 @@
 $(document).ready(function() {
 
+    //on enter button press call the chechAnswer function
+    $('#answer').keypress(function(e){
+        if(e.which == 13){//Enter key pressed
+            console.log('chilliedechil')
+            //prevent the enter button to submit form, since we have ajax for that
+            event.preventDefault();
+            
+            console.log('chilliedechilindezon');
+            checkAnswer();
+        }
+    });
 
-    $('#submitAnswer').click(function(checkAnswer) {
+    //on button press call the chechAnswer function
+    $('#submitAnswer').click(checkAnswer);
+
+    function checkAnswer() {
         console.log('knopje is ingedrukt')
         // get the value from the username field                              
         var answer = $('#answer').val();
@@ -22,7 +36,7 @@ $(document).ready(function() {
 
         // If everthing seems fine for input validation, then execute the ajax request
         else{
-            console.log('ajax wordt kampioen');
+            
             // Ajax request sent to the CodeIgniter controller "ajax" method "username_taken"
             // post the username field's value
             $.post('/index.php/ajax/evaluateAnswer',
@@ -32,11 +46,8 @@ $(document).ready(function() {
                 function(result){
                     
                     var evaluate = JSON.parse(result);
-                    console.log(evaluate);
                     // if the result is TRUE write a message to the page
                     if (evaluate.correctAnswer == 'TRUE') {
-                        console.log('ajax wordt kampioen heel en deze som is waar');
-                        console.log(evaluate.equation);
                         $('#sumText').html(evaluate.equation);
                         message = 'Goedzo je antwoord was helemaal in orde';
                         $('#answerComment').html(message);
@@ -53,33 +64,5 @@ $(document).ready(function() {
 
             );
         }
-    });
+    };
 });  
-
-
-/*
-       
-        the data we are going to send*//*
-        var postData = {
-        'answer':$('#answer').val(),
-        'equation':$('#equation').val()
-        };
-              
-        $.ajax({
-            url: "/index.php/ajax/checkAnswer",
-            type: 'POST',
-            data: postData,
-            success: 
-            
-          
-            function(checkAnswerReturn){
-                $('#answerComment').html(checkAnswerReturn)
-            }
-                    
-        });
-        console.log('oepsiedoepsie')
-        
-
-
-});
-*/ 
