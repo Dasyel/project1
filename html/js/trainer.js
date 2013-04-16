@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 
     $('#submitAnswer').click(function(checkAnswer) {
+        console.log('knopje is ingedrukt')
         // get the value from the username field                              
         var answer = $('#answer').val();
         var message = "";
@@ -10,42 +11,44 @@ $(document).ready(function() {
         // display message if answer is left empty
         if( !answer ) {
             message = 'laat je antwoord niet leeg';
-            $('#submitAnswer').after('<div id="bad_username" style="color:red;">' +
-                    '<p>'+message+'</p></div>');
+            $('#answerComment').html(message);
         }
 
         // display message if answer is non numeric
         else if ( !$.isNumeric(answer)){
             message = 'Je moet wel cijfers invoeren, en niet iets anders ';
-            $('#submitAnswer').after('<div id="bad_username" style="color:red;">' +
-                    '<p>'+message+'</p></div>');
+            $('#answerComment').html(message);
         }
 
         // If everthing seems fine for input validation, then execute the ajax request
         else{
+            console.log('ajax wordt kampioen');
             // Ajax request sent to the CodeIgniter controller "ajax" method "username_taken"
             // post the username field's value
-            $.post('/index.php/ajax/checkAnswer',
+            $.post('/index.php/ajax/evaluateAnswer',
                 { 'answer':answer },
 
                 // when the Web server responds to the request
                 function(result){
-                alert(result);
-                // if the result is TRUE write a message to the page
-                if (result == 'TRUE') {
-                    message = 'Goedzo je antwoor was helemaal in orde'
-                    $('#submitAnswer').after('<div id="bad_username" style="color:red;">' +
-                    '<p>'+message +'</p></div>');
+                    
+                    var evaluate = JSON.parse(result);
+                    console.log(evaluate);
+                    // if the result is TRUE write a message to the page
+                    if (evaluate.correctAnswer == 'TRUE') {
+                        console.log('ajax wordt kampioen heel en deze som is waar');
+                        console.log(evaluate.equation);
+                        $('#sumText').html(evaluate.equation);
+                        message = 'Goedzo je antwoord was helemaal in orde';
+                        $('#answerComment').html(message);
+                        }
+                    else if (evaluate.correctAnswer == 'FALSE') {
+                        message = 'Dit is helaas niet het goede antwoord';
+                        $('#answerComment').html(message);
+                        }
+                    else{ 
+                        message = 'Oeps er ging iets fout, ga naar de meester of juf =)'
+                        $('#answerComment').html(message)
                     }
-                else if (result == 'FALSE') {
-                    message = 'Dit is helaas niet het goede antwoord'
-                    $('#submitAnswer').after('<div id="bad_username" style="color:red;">' +
-                    '<p>'+message +'</p></div>');
-                    }
-                else 
-                    message = 'Oeps er ging iets fout, ga naar de meester of juf =)'
-                    $('#submitAnswer').after('<div id="bad_username" style="color:red;">' +
-                    '<p>'+message +'</p></div>');
                 }
 
             );
