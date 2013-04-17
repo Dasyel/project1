@@ -29,28 +29,6 @@ body{
 line-height:60px;
 }
 
-@media (min-width: 1200px) {
-    
-    .home .btn-large{
-        height:70px;
-        line-height:70px;
-    }
-
-}
-
-
-@media (min-width: 768px) and (max-width: 979px) {
-    
-    .home .btn-large{
-        height:42px;
-        line-height:42px;
-    }
-    .home .btn-large .iconDescription{
-        display:none;
-    }
-
-}
-
 .home .btn-large .icon{
    width:100%;
 }
@@ -86,14 +64,16 @@ line-height:60px;
     padding-bottom: 40px;
     padding-top: 40px;
 }
+
 .sums .form-horizontal .control-group label, .form-horizontal .controls input{
     font-size: 72px;
-    line-height: 80px;
+    line-height: 90px;
     height: auto;
 }
 
 .sums .form-horizontal .controls input{
-    padding:4px 13px;
+    padding:4px 10px;
+    width:166px;
 }
 
 .sums .form-horizontal .control-label{
@@ -110,7 +90,7 @@ line-height:60px;
 .sums #answerComment{
     text-align:center;
     width:100%;
-    font-size: 54px;
+    font-size: 42px;
     height: 90px;
     line-height: 90px;
     border-bottom: 5px solid #fff;

@@ -1,0 +1,26 @@
+@media (min-width: 1200px) {
+    
+    .home .btn-large{
+        height:70px;
+        line-height:70px;
+    }
+
+    .sums #answerComment{
+	    text-align:center;
+	    width:100%;
+	    font-size: 54px;
+	    height: 90px;
+	    line-height: 90px;
+	}
+
+    .sums .form-horizontal .control-group label, .form-horizontal .controls input{
+	    font-size: 72px;
+	    line-height: 90px;
+	}
+
+	.sums .form-horizontal .controls input{
+    	padding:4px 10px;
+    	width:212px;
+	}
+
+}
