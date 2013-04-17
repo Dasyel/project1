@@ -12,23 +12,23 @@
     </div>
     <div class="row">
         <div class="span1 offset4">
-            <a href="#" class="btn btn-warning btn-large">
+            <a href="<?php echo site_url('trainer/addition') ?>" class="btn btn-warning btn-large">
             <div class="icon"><i class="icon-white icon-heart"></i></div>
             </a>
         </div>
         <div class="span1">
-            <a href="#" class="btn btn-warning btn-large">
+            <a href="<?php echo site_url('trainer/subtraction') ?>" class="btn btn-warning btn-large">
             <div class="icon"><i class="icon-white icon-heart"></i></div>
            
             </a>
         </div>
         <div class="span1">
-            <a href="#" class="btn btn-warning btn-large">
+            <a href="<?php echo site_url('trainer/multiplication') ?>" class="btn btn-warning btn-large">
             <div class="icon"><i class="icon-white icon-heart"></i></div>
             </a>
         </div>
         <div class="span1">
-            <a href="#" class="btn btn-warning btn-large">
+            <a href="<?php echo site_url('trainer/division') ?>" class="btn btn-warning btn-large">
             <span> <div class="icon"><i class="icon-white icon-heart"></i></div></span>
             </a>
         </div>
@@ -71,25 +71,9 @@
         </div>
     </div>
     <div class="row">
-         <div class="span1 offset4">
+         <div class="span4 offset4">
             <a href="#" class="btn btn-warning btn-large">
-            <div class="icon"><i class="icon-white icon-heart"></i></div>
-            </a>
-        </div>
-        <div class="span1">
-            <a href="#" class="btn btn-warning btn-large">
-            <div class="icon"><i class="icon-white icon-heart"></i></div>
-           
-            </a>
-        </div>
-        <div class="span1">
-            <a href="#" class="btn btn-warning btn-large">
-            <div class="icon"><i class="icon-white icon-heart"></i></div>
-            </a>
-        </div>
-        <div class="span1">
-            <a href="#" class="btn btn-warning btn-large">
-            <span> <div class="icon"><i class="icon-white icon-heart"></i></div></span>
+            <div class="icon">Bekijk mijn</div>
             </a>
         </div>
     </div>
