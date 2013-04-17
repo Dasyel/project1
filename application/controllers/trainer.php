@@ -9,64 +9,41 @@ class Trainer extends CI_Controller {
 		$this->load->helper('generate_sum');
 	}
 	
-	public function index($operatorLevel = 3, $numberAmount = 2)
+	public function plus($operatorLevel = 1, $numberAmount = 2)
 	{
+		$this->initialze_trainer($operatorLevel,$numberAmount);
+	}
+	
+	public function subtraction($operatorLevel = 2, $numberAmount = 2)
+	{
+		$this->initialze_trainer($operatorLevel,$numberAmount);
+	}
+	public function multiplication($operatorLevel = 2, $numberAmount = 2)
+	{
+		$this->initialze_trainer($operatorLevel,$numberAmount);
+	}
+
+	public function division($operatorLevel = 2, $numberAmount = 2)
+	{
+		$this->initialze_trainer($operatorLevel,$numberAmount);
+	}
+
+	public function initialze_trainer($operatorLevel,$numberAmount){
 	    $equationArray = generate_equation($numberAmount,$operatorLevel);
 	    $data['equation'] = equationArray_to_string($equationArray);
-	    $this->session->set_userdata('equation', $equationArray);
+	    $sessionArray = array(
+                   'equation'  => $equationArray,
+                   'goodCount'     => '0',
+                   'operatorLevel' => $operatorLevel,
+                   
+                   'numberAmount' => $numberAmount
+        			);
+	    $this->session->set_userdata($sessionArray);
 	    
 	    $this->load->view('templates/header');
 		$this->load->view('pages/trainer_view',$data);
 		$this->load->view('templates/footer');
 	}
-	
-	public function generate_equation($operatorLevel = 3, $numberAmount = 2)
-	{
-	    $equationArray = generate_equation($numberAmount,$operatorLevel);
-	    $data['equation'] = equationArray_to_string($equationArray);
-	    $this->session->set_userdata('equation', $equationArray);
-	    
-	    $this->load->view('templates/header');
-		$this->load->view('pages/trainer_view',$data);
-		$this->load->view('templates/footer');
-	}
-	
-	
-	
-	public function checkAnswer()
-	{
-	    $answerToBeChecked = $this->input->post('answer');
-        
-
-        if (is_numeric($answerToBeChecked)) 
-        {
-            $ajaxArray = array();
-            $equation = $this->session->userdata('equation');
-            $result = answer_check($equation, $answerToBeChecked);
-
-            if($result == 'TRUE')
-            {
-                $message = "GOED ZO!";
-                //$this->index();
-            }
-            else
-            {
-                $message = "DIT IS FOUT! Ik ben niet boos, ik ben gewoon teleurgesteld.";
-            }
-
-        }
-        elseif($answerToBeChecked == "")
-        {
-            $message = "Laat je antwoord niet leeg :P";
-        }
-        else
-        {
-            $message = "Voer een nummer in en niets anders!";
-        }
-        
-        return $message;
-	}
-	
 	
 }
 

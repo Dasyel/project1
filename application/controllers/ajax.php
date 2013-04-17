@@ -13,16 +13,24 @@ class Ajax extends CI_Controller {
     {
         
         $checkanswerResult = $this->checkAnswer();
+        $goodCount = $this->session->userdata('goodCount');
         if ($checkanswerResult == "TRUE"){
-            $equationArray = generate_equation($numberAmount = 2,$operatorLevel = 3);
-            $data['equation'] = equationArray_to_string($equationArray);
-            $this->session->set_userdata('equation', $equationArray);
+            //GET SESSION DATA
+            $numberAmount = $this->session->userdata('numberAmount');
+            $operatorLevel =  $this->session->userdata('operatorLevel');
 
-            $arr = array('correctAnswer' => $checkanswerResult, 'equation' => $data['equation']);
+            $goodCount = $goodCount +1; 
+            $equationArray = generate_equation($numberAmount,$operatorLevel);
+            $data['equation'] = equationArray_to_string($equationArray);
+
+            $this->session->set_userdata('equation', $equationArray);
+            $this->session->set_userdata('goodCount', $goodCount);
+
+            $arr = array('correctAnswer' => $checkanswerResult, 'equation' => $data['equation'], 'goodCount' => $goodCount);
             echo json_encode($arr);
         }
         else if($checkanswerResult == "FALSE"){
-            $arr = array('correctAnswer' => $checkanswerResult, 'equation' => null);
+            $arr = array('correctAnswer' => $checkanswerResult, 'equation' => null,  'goodCount' => $goodCount);
             echo json_encode($arr);
         }
         else{
