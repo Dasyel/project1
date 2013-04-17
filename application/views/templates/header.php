@@ -15,10 +15,12 @@
     <?php echo link_tag('assets/css/bootstrap.min.css'); ?>
     <?php echo link_tag('assets/css/bootstrap-responsive.min.css'); ?>
     <?php echo link_tag('css/style.css')?>
-    <?php echo link_tag('css/style-1200.css')?>
-    <?php echo link_tag('css/style-768-979.css')?>
+   
     <?php echo link_tag('css/style-767.css')?>
     <?php echo link_tag('css/style-480.css')?>
+    <?php echo link_tag('css/style-768-979.css')?>
+    <?php echo link_tag('css/style-1200.css')?>
+    
 
    
    
