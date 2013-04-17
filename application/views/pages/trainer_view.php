@@ -38,4 +38,10 @@
             
         </div>
     </div>
+    <div class="row">
+        <div class="span12">
+           <div id="answerCount">
+           </div>
+        </div>
+    </div>
 </div> <!-- /container -->
