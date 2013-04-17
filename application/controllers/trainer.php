@@ -31,12 +31,7 @@ class Trainer extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 	
-	public function ajax_equation()
-	{
-	    
-	    $data = $this->generate_equation($operatorLevel = 3, $numberAmount = 2);
-	    print $data['equation'];
-	}
+	
 	
 	public function checkAnswer()
 	{
