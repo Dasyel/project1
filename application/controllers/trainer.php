@@ -9,7 +9,7 @@ class Trainer extends CI_Controller {
 		$this->load->helper('generate_sum');
 	}
 	
-	public function plus($operatorLevel = 1, $numberAmount = 2)
+	public function addition($operatorLevel = 1, $numberAmount = 2)
 	{
 		$this->initialze_trainer($operatorLevel,$numberAmount);
 	}
@@ -18,12 +18,12 @@ class Trainer extends CI_Controller {
 	{
 		$this->initialze_trainer($operatorLevel,$numberAmount);
 	}
-	public function multiplication($operatorLevel = 2, $numberAmount = 2)
+	public function multiplication($operatorLevel = 3, $numberAmount = 2)
 	{
 		$this->initialze_trainer($operatorLevel,$numberAmount);
 	}
 
-	public function division($operatorLevel = 2, $numberAmount = 2)
+	public function division($operatorLevel = 4, $numberAmount = 2)
 	{
 		$this->initialze_trainer($operatorLevel,$numberAmount);
 	}
@@ -35,7 +35,7 @@ class Trainer extends CI_Controller {
                    'equation'  => $equationArray,
                    'goodCount'     => '0',
                    'operatorLevel' => $operatorLevel,
-                   
+
                    'numberAmount' => $numberAmount
         			);
 	    $this->session->set_userdata($sessionArray);
