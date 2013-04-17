@@ -26,12 +26,16 @@ $(document).ready(function() {
         if( !answer ) {
             message = 'laat je antwoord niet leeg';
             $('#answerComment').html(message);
+            $('#answerComment').animate({ backgroundColor: "#ff9300" }, {duration: 0});
+            $('#answerComment').animate({ backgroundColor: "transparent" }, {duration: 75});
         }
 
         // display message if answer is non numeric
         else if ( !$.isNumeric(answer)){
             message = 'Je moet wel cijfers invoeren, en niet iets anders ';
             $('#answerComment').html(message);
+            $('#answerComment').animate({ backgroundColor: "#ff9300" }, {duration: 0});
+            $('#answerComment').animate({ backgroundColor: "transparent" }, {duration: 75});
         }
 
         // If everthing seems fine for input validation, then execute the ajax request
@@ -51,17 +55,22 @@ $(document).ready(function() {
                         $('#sumText').html(evaluate.equation);
                         message = 'Goedzo je antwoord was helemaal in orde';
                         $('#answerComment').html(message);
+                        $('#answerComment').animate({ backgroundColor: "#66cd00" }, {duration: 0});
+                        $('#answerComment').animate({ backgroundColor: "transparent" }, {duration: 75});
                         $('#answer').val('');
                     }
                     else if (evaluate.correctAnswer == 'FALSE') {
                         message = 'Dit is helaas niet het goede antwoord';
                         $('#answerComment').html(message);
+                        $('#answerComment').animate({ backgroundColor: "#ff2600" }, {duration: 0});
+                        $('#answerComment').animate({ backgroundColor: "transparent" }, {duration: 74});
                         $('#answer').val('');
                     }
                     else{ 
                         message = 'Oeps er ging iets fout, ga naar de meester of juf =)';
                         $('#answerComment').html(message);
                         $('#answer').val('');
+                        $('#answerComment').animate({ backgroundColor: "#000" }, {duration: 0});
                     }
                 }
 
