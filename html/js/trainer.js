@@ -50,10 +50,11 @@ $(document).ready(function() {
                 function(result){
                     
                     var evaluate = JSON.parse(result);
+                    console.log(evaluate);
                     // if the result is TRUE write a message to the page
                     if (evaluate.correctAnswer == 'TRUE') {
                         $('#sumText').html(evaluate.equation);
-                        message = 'Goedzo je antwoord was helemaal in orde';
+                        message = evaluate.goodCount;
                         $('#answerComment').html(message);
                         $('#answerComment').animate({ backgroundColor: "#66cd00" }, {duration: 0});
                         $('#answerComment').animate({ backgroundColor: "transparent" }, {duration: 75});
